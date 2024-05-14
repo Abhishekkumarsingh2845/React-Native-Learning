@@ -1,8 +1,8 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import store from './Redux/store';
+import store from './store';
  
-import CartScreen from  './Redux/CartScreen';
+import CartScreen from  './CartScreen';
 
 const App=()=>
     {
@@ -10,6 +10,6 @@ const App=()=>
             <CartScreen/>
         </Provider>
     }
+     
 
-
-    export default App;
+    
