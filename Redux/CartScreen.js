@@ -1,29 +1,27 @@
-// CartScreen.js
+// CounterDisplay.js
+
 import React from 'react';
-import { View, Text, Button } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
-import { addToCart } from './action';
+import { View, Text, StyleSheet } from 'react-native';
+import { useSelector } from 'react-redux';
 
-const CartScreen = () => {
-  const cartItems = useSelector((state) => state.cartItems);
-  const dispatch = useDispatch();
-
-  const handleAddToCart = () => {
-    dispatch(addToCart({ name: 'Sample Item' }));
-  };
+const CounterDisplay = () => {
+  const count = useSelector(state => state.count);
 
   return (
-    <View>
-      <Text>Cart Itms:</Text>
-      {cartItems.map((item, index) => (
-        <Text key={index}>{item.name}</Text>
-      ))}
-      <Button title="Add Item to Cart" onPress={handleAddToCart} />
+    <View style={styles.container}>
+      <Text style={styles.text}>Counter: {count}</Text>
     </View>
   );
 };
 
-export default CartScreen;
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    marginTop: 50,
+  },
+  text: {
+    fontSize: 24,
+  },
+});
 
-
-
+export default CounterDisplay;

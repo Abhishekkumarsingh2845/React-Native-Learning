@@ -1,7 +1,18 @@
-// store.js
-import { createStore } from 'redux';
-import reducer from './reducer';
+import {legacy_createStore as createStore} from 'redux'
 
-const store = createStore(reducer);
+// Reducer function
+const counterReducer = (state = 0, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+    default:
+      return state;
+  }
+};
 
-export default store;
+// Create Redux store
+const store = createStore(counterReducer);
+
+export default store;

@@ -1,7 +1,11 @@
-// actions.js
-export const ADD_TO_CART = 'ADD_TO_CART';
+export const increment = () => {
+  return {
+    type: 'INCREMENT'
+  };
+};
 
-export const addToCart = (item) => ({
-  type: ADD_TO_CART,
-  payload: item,
-});
+export const decrement = () => {
+  return {
+    type: 'DECREMENT'
+    };
+  };
