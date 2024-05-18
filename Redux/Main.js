@@ -64,7 +64,7 @@ const Main = () => {
           <Button title="Add" onPress={handleIncrement} />
           <Button
             title="Remove"
-            onPress={handleIncrement}
+            onPress={handleDecrement}
           />
         </View>
       </View>

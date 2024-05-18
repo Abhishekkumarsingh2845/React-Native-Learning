@@ -10,6 +10,7 @@ const App = () => {
     <Provider store={store}>
       <View style={styles.container}>
       <Main/>
+      
       </View>
     </Provider>
   );
