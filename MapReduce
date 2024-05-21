@@ -1,0 +1,37 @@
+
+const rechargeData = [
+  { id: 1, text: 'Mobile Recharge', image: require('../Asset/loud-speaker.png') },
+  { id: 2, text: 'Mobile Recharge', image: require('../Asset/loud-speaker.png') },
+  { id: 3, text: 'Mobile Recharge', image: require('../Asset/loud-speaker.png') },
+  { id: 4, text: 'Mobile Recharge', image: require('../Asset/loud-speaker.png') },
+  { id: 5, text: 'Mobile Recharge', image: require('../Asset/loud-speaker.png') },
+  { id: 6, text: 'Mobile Recharge', image: require('../Asset/loud-speaker.png') },
+  { id: 7, text: 'Mobile Recharge', image: require('../Asset/loud-speaker.png') },
+  { id: 8, text: 'Mobile Recharge', image: require('../Asset/loud-speaker.png') },
+];
+
+
+
+
+
+
+
+
+const numColumns = 4;
+
+const renderRechargeItems = rechargeData.reduce((rows, item, index) => {
+  if (index % numColumns === 0) {
+    rows.push([]);
+  }
+  rows[rows.length - 1].push(item);
+  return rows;
+}, []).map((row, rowIndex) => (
+  <View key={rowIndex} style={styles.row}>
+    {row.map((item) => (
+      <View key={item.id} style={styles.rechargeItem}>
+        <Image source={item.image} style={styles.rechargeImage} />
+        <Text style={styles.rechargeText}>{item.text}</Text>
+      </View>
+    ))}
+  </View>
+));
