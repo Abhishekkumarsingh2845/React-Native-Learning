@@ -8,9 +8,7 @@ apply plugin: "com.facebook.react"
  */
 
 
- project.ext.react = [
-    enableHermes: false // Change to true to enable Hermes
-]
+ 
 react {
     /* Folders */
     //   The root of your project, i.e. where "package.json" lives. Default is '..'
