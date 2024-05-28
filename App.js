@@ -1,36 +1,30 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
+import CarouselComponent from './AA.js';
 
-const dd = [
-  { name: 'Abhishek', dept: 'IT' },
-  { name: 'Harsh', dept: 'Sales' }
-];
-
-const App = () => {
-  return (
-    <View style={{ backgroundColor: 'white' }}>
-      {dd.map((item) => (
-        <View >
-          <Text style={styles.name}>{item.name}</Text>
-          <Text style={styles.dept}>{item.dept}</Text>
-        </View>
-      ))}
+const Slider = () => {
+  const renderItem = ({ item }) => (
+    <View style={styles.slide}>
+      <Image
+        source={item}
+        style={styles.image}
+        resizeMode="cover"
+      />
     </View>
+  );
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <CarouselComponent />
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  itemContainer: {
-    marginBottom: 10,
-  },
-  name: {
-    color: 'green',
-    fontSize: 18,
-  },
-  dept: {
-    color: 'green',
-    fontSize: 16,
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
   },
 });
 
-export default App;
+export default Slider;
